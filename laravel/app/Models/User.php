@@ -12,6 +12,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    
+    use HasRoles;
+
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -33,7 +36,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(meter::class);
     }
-
 
     /**
      * The attributes that should be hidden for serialization.
