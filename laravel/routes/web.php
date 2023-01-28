@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+// use Laravel\Jetstream\Rules\Role;
+use Spatie\Permission\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +34,27 @@ Route::middleware([
         Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
     });
 
+    // Remove this code for production
+    Route::get('/addrole/{role}', function ($role) {
+        
+        if (!Role::where("name", $role)->exists()) {
+            Role::create(["name" => $role, "guard_name" => "web"]);
+            echo "Role created";
+        }
+        else{
+            echo "Role already exists";
+        }
+
+        $user = Auth::user();
+        // assign role by name  
+        $user->assignRole(['name' => $role]);
+    
+        return redirect()->back();
+
+    })->name('addrole');
+
+
 });
+
 
 
