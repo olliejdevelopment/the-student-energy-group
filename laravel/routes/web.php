@@ -27,7 +27,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::middleware(['role:admin'])->group(function (){
+    Route::group(["middleware" => ["role:admin"]], function () {
         Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
     });
 
