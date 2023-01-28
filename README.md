@@ -1,2 +1,2 @@
-# the-student-energy-group
+# THE STUDENT ENERGY GROUP
 Software Developer Technical Test
