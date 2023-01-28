@@ -29,6 +29,12 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function meters()
+    {
+        return $this->hasMany(meter::class);
+    }
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
