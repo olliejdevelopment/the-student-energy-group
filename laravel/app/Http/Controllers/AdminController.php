@@ -17,4 +17,9 @@ class AdminController extends Controller
         return view('admin.forms.new.meter');
     }
 
+    public function meterIndex()
+    {
+        return view('admin.meter.index');
+    }
+
 }

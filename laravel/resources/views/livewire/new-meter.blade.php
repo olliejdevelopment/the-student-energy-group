@@ -19,26 +19,43 @@
         <div class="form-group">
             
             @if($type == "electricity")
-            <label for="mpxn">MPAN</label>
+                <label for="mpxn">MPAN</label>
+                <span class="badge badge-warning">21 digits starting with S</span>
                 <input type="text" wire:model.lazy="mpxn" class="form-control @error('mpxn') is-invalid @enderror" id="mpxn" placeholder="Enter MPAN">
             @elseif($type == "gas")
-            <label for="mpxn">MPRN</label>
+                <label for="mpxn">MPRN</label>
+                <span class="badge badge-warning">10 digits starting with S</span>
                 <input type="text" wire:model.lazy="mpxn" class="form-control @error('mpxn') is-invalid @enderror" id="mpxn" placeholder="Enter MPRN">
             @else
-            <label for="mpxn">MPXN</label>
+                <label for="mpxn">MPXN</label>
                 <input type="text" wire:model.lazy="mpxn" class="form-control @error('mpxn') is-invalid @enderror" id="mpxn" placeholder="Enter MPXN">
             @endif
             
             @error('mpxn')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
+                <span class="invalid-feedback">
+                    {{ $message }}
+                </span>
             @enderror
         </div>
         <div class="form-group">
             <label for="installation_date">Installation Date</label>
             <input type="date" wire:model.lazy="installation_date" class="form-control @error('installation_date') is-invalid @enderror" id="installation_date" placeholder="Enter Installation Date">
             @error('installation_date')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="user_id">Customer</label>
+            <select wire:model.lazy="user_id" class="form-control @error('user_id') is-invalid @enderror" id="user_id">
+                <option value="">Select Customer</option>
+                @foreach($users as $user)
+                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                @endforeach
+            </select>
+            @error('user_id')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>

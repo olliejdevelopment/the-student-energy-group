@@ -32,7 +32,9 @@ Route::middleware([
 
     Route::group(["middleware" => ["role:admin"]], function () {
         Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
-        Route::get("/admin/meter/add", "App\Http\Controllers\AdminController@newMeter")->name("meter.add");
+        Route::get('/admin/meter', 'App\Http\Controllers\AdminController@meterIndex')->name('admin.meter.index');
+        Route::get("/admin/meter/add", "App\Http\Controllers\AdminController@newMeter")->name("admin.meter.add");
+
     });
 
     // Remove this code for production
