@@ -22,6 +22,15 @@ class AdminController extends Controller
         return view('admin.meter.index');
     }
 
+    public function meterView($meter_id)
+    {
+        $meter = \App\Models\meter::findOrFail($meter_id);
+        return view('admin.meter.view', [
+            'meter' => $meter,
+            'meter_readings' => $meter->meter_readings,
+        ]);
+    }
+
     public function customerView($customer_id)
     {
         return view('admin.customer.view', [
