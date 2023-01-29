@@ -23,15 +23,6 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="reading">Reading</label>
-            <input type="text" wire:model.lazy="reading_value" class="form-control @error('reading_value') is-invalid @enderror" id="reading_value" placeholder="Enter Reading">
-            @error('reading_value')
-                <span class="invalid-feedback">
-                    {{ $message }}
-                </span>
-            @enderror
-        </div>
-        <div class="form-group">
             <label for="reading_date">Reading Date</label>
             <input type="date" wire:model.lazy="reading_date" class="form-control @error('reading_date') is-invalid @enderror" id="reading_date" placeholder="Enter Reading Date">
             @error('reading_date')
@@ -40,6 +31,37 @@
             </div>
             @enderror
         </div>
+
+        {{-- is_estimate --}}
+        <div class="form-group">
+            <label for="is_estimate">Is Estimate</label>
+            <select wire:model.lazy="is_estimate" class="form-control @error('is_estimate') is-invalid @enderror" id="is_estimate">
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            @error('is_estimate')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="reading">Reading</label>
+            <input type="text" wire:model.lazy="reading_value" class="form-control @error('reading_value') is-invalid @enderror" id="reading_value" placeholder="Enter Reading">
+            @if($reading_value_warning)
+            <div style="color: orange">
+                {{ $reading_value_warning }}
+            </div>
+            @endif
+            @error('reading_value')
+                <span class="invalid-feedback">
+                    {{ $message }}
+                </span>
+            @enderror
+        </div>
+
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

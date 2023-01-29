@@ -40,7 +40,8 @@ Route::middleware([
         Route::get('/admin/meter/{id}/reading/add', 'App\Http\Controllers\AdminController@newMeterReading')->name('admin.meter.custom.reading.add');
         Route::get('/admin/meter/reading/add', 'App\Http\Controllers\AdminController@newMeterReading')->name('admin.meter.reading.add');
         
-        Route::get("/customer/{id}/view", "App\Http\Controllers\AdminController@customerView")->name("admin.customer.view");
+        Route::get("/admin/customer/{id}/view", "App\Http\Controllers\AdminController@customerView")->name("admin.customer.view");
+        Route::get("/admin/customers", "App\Http\Controllers\AdminController@customerIndex")->name("admin.customer.index");
 
     });
 

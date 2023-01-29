@@ -8,10 +8,11 @@
         {{-- add meter reading button --}}
         <a href="{{ route('admin.meter.custom.reading.add', $meter->id) }}" class="btn btn-primary">Add Meter Reading</a>
     </div>
-    <div class="row">
-        <div class="col">
-            <div style="width: 650px;">
-            <table class="table table-striped" style="width: 700px">
+            <div style="width: 100%">
+                <br>
+                <h4>Meter Details</h4>
+                <br>
+            <table class="table table-striped table-sm" style="width: 100%">
                 <tbody>
                 <tr>
                     <th>ID</th>
@@ -42,7 +43,10 @@
                 </tr>
                 </tbody>
             </table>
-            <table class="table table-striped" style="width: 700px">
+            <br>
+            <h4>Recent Readings</h4>
+            <br>
+            <table class="table table-striped table-sm" style="width: 100%">
                 <thead>
                 <tr>
                     <th>Reading ID</th>
@@ -60,10 +64,6 @@
                 @endforeach
                 </tbody>
             </table>
-        </div>
-    </div>
-    <div class="col">
-    
     <div id="chart_div" style="width: 900px; height: 400px;"></div>
 
     </div>
@@ -89,7 +89,7 @@
         ]);
 
         var options = {
-            title: 'Meter Readings of the past 12 months',
+            title: 'Meter Readings',
             curveType: 'function',
             legend: { position: 'bottom' }
         };

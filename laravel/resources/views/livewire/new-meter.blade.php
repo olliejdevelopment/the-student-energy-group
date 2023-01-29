@@ -62,6 +62,21 @@
             @enderror
         </div>
 
+        <div class="form-group">
+            <label for="estimated_annual_consumption">Estimated Annual Consumption</label>
+            <input type="text" wire:model.lazy="estimated_annual_consumption" class="form-control @error('estimated_annual_consumption') is-invalid @enderror" id="estimated_annual_consumption" placeholder="Enter Estimated Annual Consumption">
+            @if($estimated_annual_consumption_warning)
+            <div style="color: orange">
+                {{ $estimated_annual_consumption_warning }} 
+            </div>
+            @endif
+            @error('estimated_annual_consumption')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
