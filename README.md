@@ -16,8 +16,14 @@ Software Developer Technical Test
 2. Run `composer install`
 3. Run `npm install`
 4. Run `npm run dev`
-5. Run `php artisan migrate`
-6. Run `php artisan serve`
+5. Edit the `.env` file to match your database connection details
+6. Run `php artisan migrate`
+7. Run `php artisan serve`
+8. Navigate to `http://localhost:8000`
+9. Register a user account
+10. Once logged in go to `http://localhost:8000/addrole/admin` to add the admin role to your user account.
+11. You can now access the admin dashboard at `http://localhost:8000/admin`
+
 
 ## Task 1 - Database
 The database used for this project is MySQL. The database migrations can be found in the `database/migrations` directory.

@@ -61,4 +61,9 @@ class AdminController extends Controller
         return view('admin.upload.backend');
     }
 
+    public function customerIndex()
+    {
+        return view('admin.customer.index');
+    }
+
 }

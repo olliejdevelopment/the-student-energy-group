@@ -82,7 +82,7 @@
                 <td>{{ $meter->id }}</td>
                 <td>{{ $meter->type }}</td>
                 <td><a href="{{ route('admin.meter.view', [$meter->id])}}">{{ $meter->mpxn }}</a></td>
-                <td><a href="{{ route('admin.customer.view', [$meter->customer_id])}}">{{ $meter->customer_name }}</a></td>
+                <td>{{ $meter->customer_name }}</td>
                 <td>{{ $meter->installation_date }}</td>
                 <td>{{ $meter->number_of_readings }}</td>
                 <td>{{ $meter->last_read }}</td>
