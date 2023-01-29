@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::table('meters', function (Blueprint $table) {
-        //     $table->integer('estimated_annual_consumption')->unsigned()->nullable();
-        // });
+        Schema::table('meters', function (Blueprint $table) {
+            $table->integer('estimated_annual_consumption')->unsigned()->nullable();
+        });
 
         Schema::table('meter_readings', function(Blueprint $table){
             $table->boolean('is_estimated')->default(false);
