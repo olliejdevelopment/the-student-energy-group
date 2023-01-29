@@ -17,6 +17,19 @@ class AdminController extends Controller
         return view('admin.forms.new.meter');
     }
 
+    public function newMeterReading($meter = null)
+    {
+        if ($meter) {
+            return view('admin.forms.new.reading', [
+                'meter' => \App\Models\meter::findOrFail($meter),
+            ]);
+        }
+        else{
+            return view('admin.forms.new.reading');
+        }
+        
+    }
+
     public function meterIndex()
     {
         return view('admin.meter.index');
