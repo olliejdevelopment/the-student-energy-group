@@ -51,4 +51,14 @@ class AdminController extends Controller
         ]);
     }
 
+    public function uploadFrontend()
+    {
+        return view('admin.upload.frontend');
+    }
+
+    public function uploadBackend()
+    {
+        return view('admin.upload.backend');
+    }
+
 }

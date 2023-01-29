@@ -43,6 +43,10 @@ Route::middleware([
         Route::get("/admin/customer/{id}/view", "App\Http\Controllers\AdminController@customerView")->name("admin.customer.view");
         Route::get("/admin/customers", "App\Http\Controllers\AdminController@customerIndex")->name("admin.customer.index");
 
+        Route::get("/admin/upload/frontend", "App\Http\Controllers\AdminController@uploadFrontend")->name("admin.upload.frontend");
+
+        Route::get("/admin/upload/backend", "App\Http\Controllers\AdminController@uploadBackend")->name("admin.upload.backend");
+
     });
 
     // Remove this code for production
