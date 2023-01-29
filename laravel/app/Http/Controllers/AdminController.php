@@ -12,4 +12,9 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    public function newMeter()
+    {
+        return view('admin.forms.new.meter');
+    }
+
 }
