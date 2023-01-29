@@ -35,10 +35,12 @@ The database connection details can be found in the `.env` file.
 There are two models in this project, `Meter` and `MeterReading`. The `Meter` model has a one-to-many relationship with the `MeterReading` model. The `Meter` Model also has a many-to-many relationship with the `User` model. Foreign keys are used to link the models together.
 
 ## Task 2 - Meters
-
 All Meters have a MPXN identifier. Meters can be either `Gas` or `Electricity`. 
 `Gas` meters have a 21 character MPXN identifier starting with M
 `Electricity` meters have a 10 character MPXN identifier starting with S.
+
+![Screenshot from 2023-01-29 21-33-10](https://user-images.githubusercontent.com/123833421/215356826-7c2ea095-a867-445d-a088-6055162ce0e8.png)
+
 ### Create a Meter
 1. Click on the `Meters` link in the navigation bar.
 2. Click on the `Create Meter` button.
