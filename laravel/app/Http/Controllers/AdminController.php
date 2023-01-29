@@ -22,4 +22,11 @@ class AdminController extends Controller
         return view('admin.meter.index');
     }
 
+    public function customerView($customer_id)
+    {
+        return view('admin.customer.view', [
+            'customer' => \App\Models\User::find($customer_id),
+        ]);
+    }
+
 }

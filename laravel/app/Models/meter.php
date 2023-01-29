@@ -18,12 +18,12 @@ class meter extends Model
 
     public function meter_readings()
     {
-        return $this->hasMany(meter_reading::class);
+        return $this->hasMany(meterReading::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
     }
 
 

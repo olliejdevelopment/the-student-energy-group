@@ -34,6 +34,7 @@ Route::middleware([
         Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
         Route::get('/admin/meter', 'App\Http\Controllers\AdminController@meterIndex')->name('admin.meter.index');
         Route::get("/admin/meter/add", "App\Http\Controllers\AdminController@newMeter")->name("admin.meter.add");
+        Route::get("/customer/{id}/view", "App\Http\Controllers\AdminController@customerView")->name("admin.customer.view");
 
     });
 
